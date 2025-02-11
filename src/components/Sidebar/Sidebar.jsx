@@ -20,6 +20,7 @@ const Sidebar = () => {
     {
       title: "Home",
       icon: <FaHome className="menu-icon"/>,
+      path: "/dashboard",
       submenus: [],
     },
     {
@@ -27,8 +28,8 @@ const Sidebar = () => {
       icon: <FaTachometerAlt className="menu-icon"/>,
       submenus: [
         { name: "Patient Registration", path: "/patientRegistration" },
-        { name: "Preferences", path: "/preferences" },
-        { name: "Security", path: "/security" },
+        { name: "Test Status", path: "/testStatus" },
+        { name: "Patient Reg. List", path: "/patientRegistrationList" },
       ],
     },
     {
@@ -51,11 +52,12 @@ const Sidebar = () => {
     <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
       <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
         <FaBars />
+        {isOpen && <span style={{marginLeft: '15px'}}>Menu</span>}
       </button>
 
       <div className="profile">
         <FaUser className="icon" />
-        {isOpen && <span>Profile</span>}
+        {isOpen && <span>Shahanaj Gaddi</span>}
       </div>
 
       {/* Divider */}
@@ -69,7 +71,14 @@ const Sidebar = () => {
             className="menu-item"
             onMouseEnter={() => !isOpen && setHoveredMenu(index)}
             onMouseLeave={() => !isOpen && setHoveredMenu(null)}
-            onClick={() => isOpen && setSubmenuOpen(submenuOpen === index ? null : index)}
+            // onClick={() => isOpen && setSubmenuOpen(submenuOpen === index ? null : index)}
+            onClick={() => {
+              if (item.path) {
+                window.location.href = item.path; // Direct navigation
+              } else if (isOpen) {
+                setSubmenuOpen(submenuOpen === index ? null : index);
+              }
+            }}
           >
             <div className="menu-main">
               {item.icon}
