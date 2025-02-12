@@ -105,19 +105,17 @@
   padding: 8px 10px;
   cursor: pointer;
   transition: background 0.3s;
-  /* margin-left: 40px; */
 }
 
 .submenu-item:hover {
   background-color: #34b3f1;
 }
 
-/* Floating Submenu (Collapsed Mode) */
 .submenu-popup {
   position: absolute;
-  left: 50px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 100%;
+  top: 0;
+  transform: none;
   background-color: #002134;
   padding: 10px;
   border-radius: 5px;
@@ -145,7 +143,7 @@
 .menu-item:focus-within .submenu-popup {
   opacity: 1;
   visibility: visible;
-  transform: translateY(-50%) scale(1.05);
+  transform: translateY(-27%) scale(1.05);
 }
 
 /* Rotate Arrow */
@@ -161,3 +159,4 @@
 .sidebar.open .menu-main span {
   margin-left: 5px;
 }
+

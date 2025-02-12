@@ -7,6 +7,8 @@ import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import PatientRegistration from "./pages/Patient/PatientRegistration/PatientRegistration";
 import TestStatusPage from "./pages/Patient/TestStatus/TestStatusPage";
+import PatientRegistrationList from "./pages/Patient/PatientRegistrationList/PatientRegistrationList";
+import MakePayment from "./pages/Account/MakePayment";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path="/patientRegistration" element={<PatientRegistration />} /> 
       <Route path="/dashboard" element={<Dashboard />} />      
       <Route path="/testStatus" element={<TestStatusPage />} />      
+      <Route path="/patientRegistarionList" element={<PatientRegistrationList />} />      
+      <Route path="/makePayment" element={<MakePayment />} />      
     </Routes>
    </BrowserRouter>
   );

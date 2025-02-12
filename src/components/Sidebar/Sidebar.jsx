@@ -33,21 +33,18 @@ const Sidebar = () => {
       ],
     },
     {
-      title: "Settings",
+      title: "Account",
       icon: <FaCog className="menu-icon"/>,
       submenus: [
-        { name: "Patient Registration", path: "/patientRegistration" },
+        { name: "Make Payment", path: "/makePayment" },
         { name: "Preferences", path: "/preferences" },
         { name: "Security", path: "/security" },
       ],
     },
-    {
-      title: "Logout",
-      icon: <FaSignOutAlt className="menu-icon"/>,
-      submenus: [],
-    },
+    
   ];
 
+  
   return (
     <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
       <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
@@ -64,7 +61,7 @@ const Sidebar = () => {
       <hr className="divider" />
 
       {/* Sidebar Menu */}
-      <ul>
+      <ul className="menu-list">
         {menuItems.map((item, index) => (
           <li
             key={index}
@@ -114,6 +111,10 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <div className="logout-button" onClick={() => (window.location.href = "/logout")}>
+      <FaSignOutAlt className="menu-icon" />
+      {isOpen && <span>Logout</span>}
+    </div>
     </div>
   );
 };

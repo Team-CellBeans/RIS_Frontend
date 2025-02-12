@@ -8,7 +8,7 @@ const Base = ({title="welcome", children}) => {
     <div className='container-fluid m-0 p-0'>
       <Header />
       <Sidebar />
-      <div style={{ paddingTop: '60px', paddingLeft: '50px' }}>
+      <div style={{ paddingTop: '70px', paddingLeft: '50px' }}>
         {children}
       </div>
 
