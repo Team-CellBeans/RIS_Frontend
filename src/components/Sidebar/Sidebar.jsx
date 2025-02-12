@@ -20,6 +20,7 @@ const Sidebar = () => {
     {
       title: "Home",
       icon: <FaHome className="menu-icon"/>,
+      path: "/dashboard",
       submenus: [],
     },
     {
@@ -27,49 +28,54 @@ const Sidebar = () => {
       icon: <FaTachometerAlt className="menu-icon"/>,
       submenus: [
         { name: "Patient Registration", path: "/patientRegistration" },
-        { name: "Preferences", path: "/preferences" },
-        { name: "Security", path: "/security" },
+        { name: "Test Status", path: "/testStatus" },
+        { name: "Patient Reg. List", path: "/patientRegistrationList" },
       ],
     },
     {
-      title: "Settings",
+      title: "Account",
       icon: <FaCog className="menu-icon"/>,
       submenus: [
-        { name: "Patient Registration", path: "/patientRegistration" },
+        { name: "Make Payment", path: "/makePayment" },
         { name: "Preferences", path: "/preferences" },
         { name: "Security", path: "/security" },
       ],
     },
-    {
-      title: "Logout",
-      icon: <FaSignOutAlt className="menu-icon"/>,
-      submenus: [],
-    },
+    
   ];
 
+  
   return (
     <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
       <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
         <FaBars />
+        {isOpen && <span style={{marginLeft: '15px'}}>Menu</span>}
       </button>
 
       <div className="profile">
         <FaUser className="icon" />
-        {isOpen && <span>Profile</span>}
+        {isOpen && <span>Shahanaj Gaddi</span>}
       </div>
 
       {/* Divider */}
       <hr className="divider" />
 
       {/* Sidebar Menu */}
-      <ul>
+      <ul className="menu-list">
         {menuItems.map((item, index) => (
           <li
             key={index}
             className="menu-item"
             onMouseEnter={() => !isOpen && setHoveredMenu(index)}
             onMouseLeave={() => !isOpen && setHoveredMenu(null)}
-            onClick={() => isOpen && setSubmenuOpen(submenuOpen === index ? null : index)}
+            // onClick={() => isOpen && setSubmenuOpen(submenuOpen === index ? null : index)}
+            onClick={() => {
+              if (item.path) {
+                window.location.href = item.path; // Direct navigation
+              } else if (isOpen) {
+                setSubmenuOpen(submenuOpen === index ? null : index);
+              }
+            }}
           >
             <div className="menu-main">
               {item.icon}
@@ -105,6 +111,10 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
+      <div className="logout-button" onClick={() => (window.location.href = "/logout")}>
+      <FaSignOutAlt className="menu-icon" />
+      {isOpen && <span>Logout</span>}
+    </div>
     </div>
   );
 };

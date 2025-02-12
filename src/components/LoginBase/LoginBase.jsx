@@ -1,11 +1,11 @@
 import React from 'react'
-import CustomNavbar from '../CustomNavbar';
+import Header from '../Header';
 import Footer from '../Footer/Footer';
 
 const LoginBase = ({title="welcome", children}) => {
   return (
     <div>
-        <CustomNavbar />
+        <Header />
         {children}
 
         <Footer />

@@ -13,7 +13,7 @@ import {
     DropdownItem,
     NavbarText,
   } from 'reactstrap';
-const CustomNavbar = () => {
+const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -52,4 +52,4 @@ const CustomNavbar = () => {
   )
 }
 
-export default CustomNavbar;
+export default Header;
