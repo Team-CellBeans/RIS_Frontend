@@ -4,11 +4,13 @@ import {
   FaUser,
   FaHome,
   FaTachometerAlt,
-  FaCog,
   FaSignOutAlt,
   FaBars,
   FaChevronDown,
+
 } from "react-icons/fa";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
+import { MdPayments } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
@@ -34,11 +36,22 @@ const Sidebar = () => {
     },
     {
       title: "Account",
-      icon: <FaCog className="menu-icon"/>,
+      icon: <MdPayments className="menu-icon"/>,
       submenus: [
         { name: "Make Payment", path: "/makePayment" },
-        { name: "Preferences", path: "/preferences" },
-        { name: "Security", path: "/security" },
+        { name: "Ledger Of Client", path: "/ledgerOfClient" },
+        { name: "Search Payment", path: "/searchPayment" },
+        { name: "Centerwise Sales", path: "/centerWiseSale" },
+        { name: "Verification of Payment", path: "/verificationOfPayment" },
+        { name: "Income Details", path: "/incomeDetails" },
+      ],
+    },
+    {
+      title: "Account Report",
+      icon: <FaMoneyCheckDollar className="menu-icon"/>,
+      submenus: [
+        { name: "Recalculate", path: "/recalculateCompliment" },
+       
       ],
     },
     
