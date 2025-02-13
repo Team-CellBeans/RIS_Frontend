@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import "./../../components/Styles/mainPages.css";
+import "./../../../components/Styles/global.css";
 import "./MakePayment.css";
-import Base from "../../components/Base";
+import Base from "../../../components/Base";
 import { useNavigate } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+
 
 const MakePayment = () => {
     const navigate = useNavigate();
@@ -21,7 +23,7 @@ const MakePayment = () => {
         <div className="main-container">
         <div className="header-container">
             <b>
-            <h5>Make Payment</h5>
+            <h5><FaUser style={{marginRight: '10px'}}/>Make Payment</h5>
             </b>      
         </div>
         <form onSubmit={handleSubmit}>
@@ -52,7 +54,7 @@ const MakePayment = () => {
                                 padding: '5px',
                                 width: '100%',
                                 height: '40px',
-                                borderRadius: '10px',
+                                borderRadius: '5px',
                                 border: '1px solid #ccc',
                               }}
                             >
@@ -80,7 +82,7 @@ const MakePayment = () => {
                       width: '100%',
                       padding: '10px',
                       border: '1px solid #ccc',
-                      borderRadius: '10px',
+                      borderRadius: '5px',
                       fontSize: '14px',
                       resize: 'vertical',
                       height: '40px',
@@ -104,7 +106,7 @@ const MakePayment = () => {
                       width: '100%',
                       padding: '10px',
                       border: '1px solid #ccc',
-                      borderRadius: '10px',
+                      borderRadius: '5px',
                       fontSize: '14px',
                       resize: 'vertical',
                       height: '40px',
@@ -120,26 +122,27 @@ const MakePayment = () => {
                     Mode of Payment
                   </label>
                   <div
-    style={{
-      display: 'flex',
-      gap: '15px',
-      alignItems: 'center',
-      justifyContent: 'flex-start'
-    }}
-  >
-    <label style={{ display: 'flex', alignItems: 'center' }}>
-      <input type="radio" name="paymentMode" value="Cash" id="cash" />
-      <span style={{ marginLeft: '5px' }}>Cash</span>
-    </label>
-    <label style={{ display: 'flex', alignItems: 'center' }}>
-      <input type="radio" name="paymentMode" value="Cheque / DD" id="cheque" />
-      <span style={{ marginLeft: '5px' }}>Cheque / DD</span>
-    </label>
-    <label style={{ display: 'flex', alignItems: 'center' }}>
-      <input type="radio" name="paymentMode" value="Credit Card" id="creditCard" />
-      <span style={{ marginLeft: '5px' }}>Credit Card</span>
-    </label>
-  </div>
+                    style={{
+                      display: 'flex',
+                      gap: '15px',
+                      alignItems: 'center',
+                      justifyContent: 'flex-start',
+                      marginTop: '10px',
+                    }}              
+                    >
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input type="radio" name="paymentMode" value="Cash" id="cash" />
+                      <span style={{ marginLeft: '5px' }}>Cash</span>
+                    </label>
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input type="radio" name="paymentMode" value="Cheque / DD" id="cheque" />
+                      <span style={{ marginLeft: '5px' }}>Cheque / DD</span>
+                    </label>
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input type="radio" name="paymentMode" value="Credit Card" id="creditCard" />
+                      <span style={{ marginLeft: '5px' }}>Credit Card</span>
+                    </label>
+                  </div>
                 </div>
               </div>
 

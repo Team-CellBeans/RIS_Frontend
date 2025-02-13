@@ -8,7 +8,13 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import PatientRegistration from "./pages/Patient/PatientRegistration/PatientRegistration";
 import TestStatusPage from "./pages/Patient/TestStatus/TestStatusPage";
 import PatientRegistrationList from "./pages/Patient/PatientRegistrationList/PatientRegistrationList";
-import MakePayment from "./pages/Account/MakePayment";
+import MakePayment from "./pages/Account/MakePayment/MakePayment";
+import LedgerOfClient from "./pages/Account/LedgerOfClient/LedgerOfClient";
+import SearchPayment from "./pages/Account/SearchPayment/SearchPayment";
+import CenterWiseSale from "./pages/Account/CenterwiseSale/CenterWiseSale";
+import VerificationOfPayment from "./pages/Account/VerificationOfPayment/VerificationOfPayment";
+import IncomeDetails from "./pages/Account/IncomeDetails/IncomeDetails";
+import RecalculateCompliment from "./pages/Account/AccountReport/Recalculate/RecalculateCompliment";
 
 function App() {
   return (
@@ -18,11 +24,20 @@ function App() {
       <Route path="/login" element={<Login/>} /> 
       <Route path="/signup" element={<Signup />} /> 
       <Route path="/about" element={<About />} /> 
-      <Route path="/patientRegistration" element={<PatientRegistration />} /> 
       <Route path="/dashboard" element={<Dashboard />} />      
+
+      <Route path="/patientRegistration" element={<PatientRegistration />} /> 
       <Route path="/testStatus" element={<TestStatusPage />} />      
       <Route path="/patientRegistarionList" element={<PatientRegistrationList />} />      
+
       <Route path="/makePayment" element={<MakePayment />} />      
+      <Route path="/ledgerOfClient" element={<LedgerOfClient />} />      
+      <Route path="/searchPayment" element={<SearchPayment />} />      
+      <Route path="/centerWiseSale" element={<CenterWiseSale />} />      
+      <Route path="/verificationOfPayment" element={<VerificationOfPayment />} />      
+      <Route path="/incomeDetails" element={<IncomeDetails />} />     
+
+      <Route path="/recalculateCompliment" element={<RecalculateCompliment />} />      
     </Routes>
    </BrowserRouter>
   );
