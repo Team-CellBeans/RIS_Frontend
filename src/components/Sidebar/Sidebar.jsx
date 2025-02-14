@@ -31,7 +31,7 @@ const Sidebar = () => {
       submenus: [
         { name: "Patient Registration", path: "/patientRegistration" },
         { name: "Test Status", path: "/testStatus" },
-        { name: "Patient Reg. List", path: "/patientRegistrationList" },
+        // { name: "Patient Reg. List", path: "/patientRegistrationList" },
       ],
     },
     {
@@ -51,6 +51,8 @@ const Sidebar = () => {
       icon: <FaMoneyCheckDollar className="menu-icon"/>,
       submenus: [
         { name: "Recalculate", path: "/recalculateCompliment" },
+        { name: "Update Charges", path: "/updateCharges" },
+        { name: "Compliment Report", path: "/complimentReport" },
        
       ],
     },
