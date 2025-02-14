@@ -15,6 +15,8 @@ import CenterWiseSale from "./pages/Account/CenterwiseSale/CenterWiseSale";
 import VerificationOfPayment from "./pages/Account/VerificationOfPayment/VerificationOfPayment";
 import IncomeDetails from "./pages/Account/IncomeDetails/IncomeDetails";
 import RecalculateCompliment from "./pages/Account/AccountReport/Recalculate/RecalculateCompliment";
+import UpdateCharges from "./pages/Account/AccountReport/UpdateCharges/UpdateCharges";
+import ComplimentReport from "./pages/Account/AccountReport/ComplimentReport/ComplimentReport";
 
 function App() {
   return (
@@ -28,7 +30,7 @@ function App() {
 
       <Route path="/patientRegistration" element={<PatientRegistration />} /> 
       <Route path="/testStatus" element={<TestStatusPage />} />      
-      <Route path="/patientRegistarionList" element={<PatientRegistrationList />} />      
+      <Route path="/patientRegistrationList" element={<PatientRegistrationList />} />      
 
       <Route path="/makePayment" element={<MakePayment />} />      
       <Route path="/ledgerOfClient" element={<LedgerOfClient />} />      
@@ -38,6 +40,8 @@ function App() {
       <Route path="/incomeDetails" element={<IncomeDetails />} />     
 
       <Route path="/recalculateCompliment" element={<RecalculateCompliment />} />      
+      <Route path="/updateCharges" element={<UpdateCharges />} />      
+      <Route path="/complimentReport" element={<ComplimentReport />} />      
     </Routes>
    </BrowserRouter>
   );

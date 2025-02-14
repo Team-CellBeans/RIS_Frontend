@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PatientRegistrationList.css";
+import Base from "../../../components/Base";
 
 const PatientRegistrationList = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const PatientRegistrationList = () => {
 
   return (
     <>
+    <Base>
       <div className="list-container">
         <h2>Patient Registration List</h2>
         {patientData ? (
@@ -27,6 +29,7 @@ const PatientRegistrationList = () => {
           <p>No patient registered yet.</p>
         )}
       </div>
+      </Base>
     </>
   );
 };

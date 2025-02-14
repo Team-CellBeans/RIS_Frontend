@@ -41,11 +41,11 @@
   .dashboard-icon {
     font-size: 60px;
     color: #5e7c8d;
-    background-color: #ebebeb;
+    background-color: #cfedfd;
     height: 100px;
     width: 110px;
-    display: flex; /* ✅ Enables flexbox */
-    align-items: center; /* ✅ Centers icon inside */
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
   
