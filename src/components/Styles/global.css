@@ -16,6 +16,28 @@ body{
     border-radius: 5px;
 }
 
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.custom-table {
+  margin-top: 10px;
+  width: max-content; 
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th, .custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table th {
+  background: #f1f1f1;
+}
+    
 .btn {
     margin-right: 10px;
     padding: 5px 20px;

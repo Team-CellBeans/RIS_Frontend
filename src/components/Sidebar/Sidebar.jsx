@@ -52,8 +52,13 @@ const Sidebar = () => {
       submenus: [
         { name: "Recalculate", path: "/recalculateCompliment" },
         { name: "Update Charges", path: "/updateCharges" },
-        { name: "Compliment Report", path: "/complimentReport" },
-       
+        { name: "Compliment Report New", path: "/complimentReportNew" },
+        { name: "Comprehensive Report New", path: "/comprehensiveReportNew" }, 
+        { name: "Comprehensive Report", path: "/comprehensiveReport" }, 
+        { name: "Doctorwise Sales Report", path: "/doctorWiseSales" }, 
+        { name: "Authorizing List", path: "/authorizedList" }, 
+        { name: "Generate Invoice CC", path: "/generarateInvoiceCc" }, 
+        { name: "Generate Invoice Source", path: "/generateInvoiceSource" }, 
       ],
     },
     

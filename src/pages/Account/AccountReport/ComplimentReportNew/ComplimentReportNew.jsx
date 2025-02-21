@@ -1,63 +1,31 @@
 import React, { useState } from "react";
-import "./../../../components/Styles/global.css";
-import "./VerificationOfPayment.css";
-import Base from "../../../components/Base";
+import "./../../../../components/Styles/global.css";
+import "./ComplimentReportNew";
+import Base from "../../../../components/Base";
 import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 
 
-const VerificationOfPayment = () => {
+const ComplimentReportNew = () => {
     const navigate = useNavigate();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-
-    const [fromDate, setFromDate] = useState("");
-    const [toDate, setToDate] = useState("2025-02-03");
-    const [client, setClient] = useState("");
-  
-    const data = [
-      {
-        client: "DHANASHREE HOSPITAL DIAGNOSTICS",
-        billNo: "98465132",
-        regNo: "",
-        patientName: "XXXXX",
-        billDate: "02/02/2025",
-        amount: "150",
-        payMode: "Cash",
-        chequeNo: "",
-        verify: true,
-      },
-      {
-        client: "DHANASHREE HOSPITAL DIAGNOSTICS",
-        billNo: "98465132",
-        regNo: "",
-        patientName: "",
-        billDate: "",
-        amount: "",
-        payMode: "",
-        chequeNo: "",
-        verify: true,
-      },
-    ];
-
 
     const handleSubmit = async e => {
         e.preventDefault();
     
       };
-    
-
   return (
     <Base>
         <div className="main-container">
         <div className="header-container">
             <b>
-            <h5><FaUser style={{marginRight: '10px'}}/>Verification Of Payment</h5>
+            <h5><FaUser style={{marginRight: '10px'}}/>Compliment Report</h5>
             </b>      
         </div>
         <form onSubmit={handleSubmit}>
             <div className="sub-container">
-                <div style={{ paddingTop: '10px' }}>
+                <div style={{ paddingTop: '20px' }}>
                   {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
                   {success && <p style={{ color: 'green', textAlign: 'center' }}>{success}</p>}
                 </div>
@@ -65,7 +33,7 @@ const VerificationOfPayment = () => {
             </div>
             <div style={{paddingTop: '10px'}}>
 
-              <div style={{ display: 'flex', }}>
+              <div style={{ display: 'flex', marginBottom: '16px' }}>
                 <div style={{ flex: 1, marginRight: '25px' }}>
                 <label
                     htmlFor="fromDate"
@@ -121,14 +89,14 @@ const VerificationOfPayment = () => {
                 </div>
                 <div style={{ flex: 1, marginRight: '25px' }}>
                   <label
-                    htmlFor="client"
+                    htmlFor="doctor"
                     style={{ marginBottom: '5px' }}
                   >
-                    Select Client
+                    Doctor
                   </label>
                   <select
-                     id="clientName"
-                     name="clientName"
+                     id="doctor"
+                     name="doctor"
                      required
                             //   value={clientName}
                             //   onChange={(e) => setClientName(e.target.value)}
@@ -140,64 +108,46 @@ const VerificationOfPayment = () => {
                                 border: '1px solid #ccc',
                               }}
                             >
-                              <option value="">Select Client Name</option>
-                              <option value="Client A">Client A</option>
-                              <option value="Client B">Client B</option>
-                            </select>
+                              <option value="">Select Doctor</option>
+                              <option value="Client A">Dr. John</option>
+                              <option value="Client B">Dr. Thomus</option>
+                    </select>
                   
                 </div>
-                <div style={{ flex: 1, marginRight: '25px', display: 'flex', alignItems: 'center', marginTop: '25px' }}> 
-                  <button className="btn-list" >SHOW</button>
-                </div>
+                <div
+                    style={{
+                      display: 'flex',
+                      gap: '15px',
+                      alignItems: 'center',
+                      justifyContent: 'flex-start',
+                      marginTop: '10px',
+                    }}              
+                    >
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input type="radio" name="paymentMode" value="Cash" id="cash" />
+                      <span style={{ marginLeft: '5px' }}>Billed</span>
+                    </label>
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input type="radio" name="paymentMode" value="Cheque / DD" id="cheque" />
+                      <span style={{ marginLeft: '5px' }}>Unbilled</span>
+                    </label>
+                    <label style={{ display: 'flex', alignItems: 'center' }}>
+                      <input type="radio" name="paymentMode" value="Credit Card" id="creditCard" />
+                      <span style={{ marginLeft: '5px' }}>All</span>
+                    </label>
+                  </div>
               </div>
-
+              <div >
+                <button type="submit" className="btn-submit" style={{ width: '150px', padding: 0}}>PDF Report</button>  
+                <button type="submit" className="btn-submit" style={{ width: '150px', padding: 0}}>Excel Report</button>  
+                <button type="submit" className="btn-submit" style={{ width: '150px', padding: 0}}>Summary Report</button>  
             </div>
-            <div className="table-container">
-              <table className="custom-table">
-                <thead>
-                  <tr>
-                    <th>Client</th>
-                    <th>Bill No</th>
-                    <th>Reg. No</th>
-                    <th>Patient Name</th>
-                    <th>Bill Date</th>
-                    <th>Amount</th>
-                    <th>Pay Mode</th>
-                    <th>Cheque No</th>
-                    <th>Verify</th>
-                    <th>Details</th>
-                    <th>Delete</th>
-                    <th>Print</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.map((row, index) => (
-                    <tr key={index}>
-                      <td>{row.client}</td>
-                      <td>{row.billNo}</td>
-                      <td>{row.regNo}</td>
-                      <td>{row.patientName}</td>
-                      <td>{row.billDate}</td>
-                      <td>{row.amount}</td>
-                      <td>{row.payMode}</td>
-                      <td>{row.chequeNo}</td>
-                      <td><input type="checkbox" checked={row.verify} readOnly /></td>
-                      <td><a href="#">Payment Details</a></td>
-                      <td><button className="btn-delete">Delete</button></td>
-                      <td><button className="btn-print">Print</button></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
-            <div className="button-container" style={{marginTop: "10px"}}>
-              <button className="btn-print">PRINT</button>
-              <button className="btn">VERIFY</button>
-            </div>
+            
           </form>
         </div>
     </Base>
   );
 };
 
-export default VerificationOfPayment;
+export default ComplimentReportNew;
