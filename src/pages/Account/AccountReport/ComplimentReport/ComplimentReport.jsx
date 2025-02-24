@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "./../../../../components/Styles/global.css";
-import "./ComprehensiveReport";
 import Base from "../../../../components/Base";
 import { useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 
 
-const ComprehensiveReport = () => {
+const ComplimentReport = () => {
     const navigate = useNavigate();
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -20,7 +19,7 @@ const ComprehensiveReport = () => {
         <div className="main-container">
         <div className="header-container">
             <b>
-            <h5><FaUser style={{marginRight: '10px'}}/>Comprehensive Report</h5>
+            <h5><FaUser style={{marginRight: '10px'}}/>Compliment Report</h5>
             </b>      
         </div>
         <form onSubmit={handleSubmit}>
@@ -92,34 +91,34 @@ const ComprehensiveReport = () => {
                     htmlFor="doctor"
                     style={{ marginBottom: '5px' }}
                   >
-                    Doctor Name
+                    Doctor
                   </label>
                   <select
                      id="doctor"
                      name="doctor"
                      required
-                            //   value={clientName}
-                            //   onChange={(e) => setClientName(e.target.value)}
-                              style={{
-                                padding: '5px',
-                                width: '100%',
-                                height: '40px',
-                                borderRadius: '5px',
-                                border: '1px solid #ccc',
-                              }}
-                            >
-                              <option value="">Select Doctor</option>
-                              <option value="Client A">Dr. John</option>
-                              <option value="Client B">Dr. Thomus</option>
-                    </select>      
+                    //   value={clientName}
+                    //   onChange={(e) => setClientName(e.target.value)}
+                      style={{
+                        padding: '5px',
+                        width: '100%',
+                        height: '40px',
+                        borderRadius: '5px',
+                        border: '1px solid #ccc',
+                      }}
+                    >
+                      <option value="">Select Doctor</option>
+                      <option value="Client A">Dr. John</option>
+                      <option value="Client B">Dr. Thomus</option>
+                    </select>  
                 </div>
-                <div style={{ flex: 1, marginRight: '25px' }}></div>
+                <div style={{ flex: 1, marginRight: '25px' }}>
+                </div>
               </div>
               <div >
                 <button type="submit" className="btn-submit" style={{ width: '150px', padding: 0}}>PDF Report</button>  
                 <button type="submit" className="btn-submit" style={{ width: '150px', padding: 0}}>Excel Report</button>  
                 <button type="submit" className="btn-submit" style={{ width: '150px', padding: 0}}>Summary Report</button>  
-                <button type="submit" className="btn-submit" style={{ }}>Excel Report Without Patient Name</button>  
             </div>
             </div>
             
@@ -129,4 +128,4 @@ const ComprehensiveReport = () => {
   );
 };
 
-export default ComprehensiveReport;
+export default ComplimentReport;

@@ -23,6 +23,7 @@ import DoctorWiseSales from "./pages/Account/AccountReport/DoctorWiseSales/Docto
 import AuthorizedList from "./pages/Account/AccountReport/AuthorizedList/AuthorizedList";
 import GenerarateInvoiceCc from "./pages/Account/AccountReport/GenerarateInvoiceCc/GenerarateInvoiceCc";
 import GenerateInvoiceSource from "./pages/Account/AccountReport/GenerateInvoiceSource/GenerateInvoiceSource";
+import ComplimentReport from "./pages/Account/AccountReport/ComplimentReport/ComplimentReport";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
       <Route path="/updateCharges" element={<UpdateCharges />} />      
       <Route path="/complimentReportNew" element={<ComplimentReportNew />} />      
       <Route path="/comprehensiveReportNew" element={<ComprehensiveReportNew />} />
+      <Route path="/complimentReport" element={<ComplimentReport />} />
       <Route path="/comprehensiveReport" element={<ComprehensiveReport />} />            
       <Route path="/doctorWiseSales" element={<DoctorWiseSales />} />      
       <Route path="/authorizedList" element={<AuthorizedList />} />      

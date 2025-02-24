@@ -54,11 +54,12 @@ const Sidebar = () => {
         { name: "Update Charges", path: "/updateCharges" },
         { name: "Compliment Report New", path: "/complimentReportNew" },
         { name: "Comprehensive Report New", path: "/comprehensiveReportNew" }, 
-        { name: "Comprehensive Report", path: "/comprehensiveReport" }, 
-        { name: "Doctorwise Sales Report", path: "/doctorWiseSales" }, 
-        { name: "Authorizing List", path: "/authorizedList" }, 
-        { name: "Generate Invoice CC", path: "/generarateInvoiceCc" }, 
-        { name: "Generate Invoice Source", path: "/generateInvoiceSource" }, 
+        { name: "Compliment Report", path: "/complimentReport" }, 
+        // { name: "Comprehensive Report", path: "/comprehensiveReport" }, 
+        // { name: "Doctorwise Sales Report", path: "/doctorWiseSales" }, 
+        // { name: "Authorizing List", path: "/authorizedList" }, 
+        // { name: "Generate Invoice CC", path: "/generarateInvoiceCc" }, 
+        // { name: "Generate Invoice Source", path: "/generateInvoiceSource" }, 
       ],
     },
     
@@ -75,9 +76,8 @@ const Sidebar = () => {
       <div className="profile">
         <FaUser className="icon" />
         {isOpen && <span>Shahanaj Gaddi</span>}
-      </div>
+      </div> 
 
-      {/* Divider */}
       <hr className="divider" />
 
       {/* Sidebar Menu */}
@@ -88,10 +88,9 @@ const Sidebar = () => {
             className="menu-item"
             onMouseEnter={() => !isOpen && setHoveredMenu(index)}
             onMouseLeave={() => !isOpen && setHoveredMenu(null)}
-            // onClick={() => isOpen && setSubmenuOpen(submenuOpen === index ? null : index)}
             onClick={() => {
               if (item.path) {
-                window.location.href = item.path; // Direct navigation
+                window.location.href = item.path; 
               } else if (isOpen) {
                 setSubmenuOpen(submenuOpen === index ? null : index);
               }
